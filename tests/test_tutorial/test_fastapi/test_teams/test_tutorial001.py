@@ -508,7 +508,7 @@ def test_tutorial(clear_sqlmodel):
         data = response.json()
         assert len(data) == 3
         response = client.patch(
-            f"/heroes/{hero2_id}", json={"secret_name": "Spider-Youngster"}
+            f"/heroes/{hero2_id}", json={"secret_name": "Spider-Boy"}
         )
         assert response.status_code == 200, response.text
         response = client.patch("/heroes/9001", json={"name": "Dragon Cube X"})

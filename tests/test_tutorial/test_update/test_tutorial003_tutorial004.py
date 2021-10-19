@@ -22,7 +22,7 @@ expected_calls = [
         "Updated hero 1:",
         {
             "id": 2,
-            "name": "Spider-Youngster",
+            "name": "Spider-Boy",
             "secret_name": "Pedro Parqueador",
             "age": 16,
         },

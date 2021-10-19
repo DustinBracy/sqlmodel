@@ -269,14 +269,12 @@ def test_tutorial(clear_sqlmodel):
         assert len(data) == 3
 
         response = client.patch(
-            f"/heroes/{hero2_id}", json={"secret_name": "Spider-Youngster"}
+            f"/heroes/{hero2_id}", json={"secret_name": "Spider-Boy"}
         )
         data = response.json()
         assert response.status_code == 200, response.text
         assert data["name"] == hero2_data["name"], "The name should not be set to none"
-        assert (
-            data["secret_name"] == "Spider-Youngster"
-        ), "The secret name should be updated"
+        assert data["secret_name"] == "Spider-Boy", "The secret name should be updated"
 
         response = client.patch(f"/heroes/{hero3_id}", json={"age": None})
         data = response.json()

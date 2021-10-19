@@ -54,7 +54,7 @@ def update_heroes():
         print("Hero 2:", hero_2)
 
         hero_1.age = 16
-        hero_1.name = "Spider-Youngster"
+        hero_1.name = "Spider-Boy"
         session.add(hero_1)
 
         hero_2.name = "Captain North America Except Canada"

@@ -22,7 +22,7 @@ expected_calls = [
         "Updated hero 1:",
         {
             "id": 2,
-            "name": "Spider-Youngster",
+            "name": "Spider-Boy",
             "secret_name": "Pedro Parqueador",
             "age": 16,
         },
@@ -40,7 +40,7 @@ expected_calls = [
         "Hero: ",
         {
             "id": 2,
-            "name": "Spider-Youngster",
+            "name": "Spider-Boy",
             "secret_name": "Pedro Parqueador",
             "age": 16,
         },
@@ -49,12 +49,12 @@ expected_calls = [
         "Deleted hero:",
         {
             "id": 2,
-            "name": "Spider-Youngster",
+            "name": "Spider-Boy",
             "secret_name": "Pedro Parqueador",
             "age": 16,
         },
     ],
-    ["There's no hero named Spider-Youngster"],
+    ["There's no hero named Spider-Boy"],
 ]
 
 

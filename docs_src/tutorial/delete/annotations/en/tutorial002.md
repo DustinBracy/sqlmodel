@@ -1,37 +1,37 @@
-1. Select the hero we will delete.
+1.  Select the hero we will delete.
 
-2. Execute the query with the select statement object.
+2.  Execute the query with the select statement object.
 
     This generates the output:
 
     ```
     INFO Engine BEGIN (implicit)
-    INFO Engine SELECT hero.id, hero.name, hero.secret_name, hero.age 
-    FROM hero 
+    INFO Engine SELECT hero.id, hero.name, hero.secret_name, hero.age
+    FROM hero
     WHERE hero.name = ?
-    INFO Engine [no key 0.00011s] ('Spider-Youngster',)
+    INFO Engine [no key 0.00011s] ('Spider-Boy',)
     ```
 
-3. Get one hero object, expecting exactly one.
+3.  Get one hero object, expecting exactly one.
 
     !!! tip
-        This ensures there's no more than one, and that there's exactly one, not `None`.
+    This ensures there's no more than one, and that there's exactly one, not `None`.
 
         This would never return `None`, instead it would raise an exception.
 
-4. Print the hero object.
+4.  Print the hero object.
 
     This generates the output:
 
     ```
-    Hero:  name='Spider-Youngster' secret_name='Pedro Parqueador' age=16 id=2
+    Hero:  name='Spider-Boy' secret_name='Pedro Parqueador' age=16 id=2
     ```
 
-5. Delete the hero from the **session**.
+5.  Delete the hero from the **session**.
 
     This marks the hero as deleted from the session, but it will not be removed from the database until we **commit** the changes.
 
-6. Commit the session.
+6.  Commit the session.
 
     This saves the changes in the session, including deleting this row.
 
@@ -43,7 +43,7 @@
     INFO Engine COMMIT
     ```
 
-7. Print the deleted hero object.
+7.  Print the deleted hero object.
 
     The hero is deleted in the database. And is marked as deleted in the session.
 
@@ -52,23 +52,23 @@
     This generates the output:
 
     ```
-    Deleted hero: name='Spider-Youngster' secret_name='Pedro Parqueador' age=16 id=2
+    Deleted hero: name='Spider-Boy' secret_name='Pedro Parqueador' age=16 id=2
     ```
 
-8. Select the same hero again.
+8.  Select the same hero again.
 
     We'll do this to confirm if the hero is really deleted.
 
-9. Execute the select statement.
+9.  Execute the select statement.
 
     This generates the output:
 
     ```
     INFO Engine BEGIN (implicit)
-    INFO Engine SELECT hero.id, hero.name, hero.secret_name, hero.age 
-    FROM hero 
+    INFO Engine SELECT hero.id, hero.name, hero.secret_name, hero.age
+    FROM hero
     WHERE hero.name = ?
-    INFO Engine [no key 0.00013s] ('Spider-Youngster',)
+    INFO Engine [no key 0.00013s] ('Spider-Boy',)
     ```
 
 10. Get the "first" item from the `results`.
@@ -84,7 +84,7 @@
     This generates the output:
 
     ```
-    There's no hero named Spider-Youngster
+    There's no hero named Spider-Boy
     ```
 
 13. This is the end of the `with` block, here the **session** executes its closing code.

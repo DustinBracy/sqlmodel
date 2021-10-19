@@ -576,7 +576,7 @@ def test_tutorial(clear_sqlmodel):
         assert data["name"] == hero1_data["name"]
         assert data["team"]["name"] == team_z_force["name"]
         response = client.patch(
-            f"/heroes/{hero2_id}", json={"secret_name": "Spider-Youngster"}
+            f"/heroes/{hero2_id}", json={"secret_name": "Spider-Boy"}
         )
         assert response.status_code == 200, response.text
         response = client.patch("/heroes/9001", json={"name": "Dragon Cube X"})

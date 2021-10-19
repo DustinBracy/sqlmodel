@@ -54,7 +54,7 @@ def update_heroes():
         print("Hero 2:", hero_2)
 
         hero_1.age = 16
-        hero_1.name = "Spider-Youngster"
+        hero_1.name = "Spider-Boy"
         session.add(hero_1)
 
         hero_2.name = "Captain North America Except Canada"
@@ -71,7 +71,7 @@ def update_heroes():
 
 def delete_heroes():
     with Session(engine) as session:
-        statement = select(Hero).where(Hero.name == "Spider-Youngster")  # (1)
+        statement = select(Hero).where(Hero.name == "Spider-Boy")  # (1)
         results = session.exec(statement)  # (2)
         hero = results.one()  # (3)
         print("Hero: ", hero)  # (4)
@@ -81,12 +81,12 @@ def delete_heroes():
 
         print("Deleted hero:", hero)  # (7)
 
-        statement = select(Hero).where(Hero.name == "Spider-Youngster")  # (8)
+        statement = select(Hero).where(Hero.name == "Spider-Boy")  # (8)
         results = session.exec(statement)  # (9)
         hero = results.first()  # (10)
 
         if hero is None:  # (11)
-            print("There's no hero named Spider-Youngster")  # (12)
+            print("There's no hero named Spider-Boy")  # (12)
     # (13)
 
 

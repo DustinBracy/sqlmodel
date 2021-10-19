@@ -19,7 +19,7 @@ Remember to remove the `database.db` file before running the examples to get the
 
 ## Delete with SQL
 
-This `Spider-Youngster` is getting too weird, so let's just delete it.
+This `Spider-Boy` is getting too weird, so let's just delete it.
 
 But don't worry, we'll reboot it later with a new story. 😅
 
@@ -28,14 +28,14 @@ Let's see how to delete it with **SQL**:
 ```SQL hl_lines="1"
 DELETE
 FROM hero
-WHERE name = "Spider-Youngster"
+WHERE name = "Spider-Boy"
 ```
 
 This means, more or less:
 
 > Hey SQL database 👋, I want to `DELETE` rows `FROM` the table called `hero`.
 >
-> Please delete all the rows `WHERE` the value of the column `name` is equal to `"Spider-Youngster"`.
+> Please delete all the rows `WHERE` the value of the column `name` is equal to `"Spider-Boy"`.
 
 Remember that when using a `SELECT` statement it has the form:
 
@@ -61,7 +61,7 @@ To get the same results, delete the `database.db` file before running the exampl
 
 ## Read From the Database
 
-We'll start by selecting the hero `"Spider-Youngster"` that we updated in the previous chapter, this is the one we will delete:
+We'll start by selecting the hero `"Spider-Boy"` that we updated in the previous chapter, this is the one we will delete:
 
 ```Python hl_lines="5"
 # Code above omitted 👆
@@ -97,7 +97,7 @@ As this is a new function `delete_heroes()`, we'll also add it to the `main()` f
 
 </details>
 
-That will print the same existing hero **Spider-Youngster**:
+That will print the same existing hero **Spider-Boy**:
 
 <div class="termy">
 
@@ -108,13 +108,13 @@ $ python app.py
 
 // The SELECT with WHERE
 INFO Engine BEGIN (implicit)
-INFO Engine SELECT hero.id, hero.name, hero.secret_name, hero.age 
-FROM hero 
+INFO Engine SELECT hero.id, hero.name, hero.secret_name, hero.age
+FROM hero
 WHERE hero.name = ?
-INFO Engine [no key 0.00011s] ('Spider-Youngster',)
+INFO Engine [no key 0.00011s] ('Spider-Boy',)
 
 // Print the hero as obtained from the database
-Hero:  name='Spider-Youngster' secret_name='Pedro Parqueador' age=16 id=2
+Hero:  name='Spider-Boy' secret_name='Pedro Parqueador' age=16 id=2
 ```
 
 </div>
@@ -225,14 +225,14 @@ $ python app.py
 // Previous output omitted 🙈
 
 // Print the deleted hero
-Deleted hero: name='Spider-Youngster' secret_name='Pedro Parqueador' age=16 id=2
+Deleted hero: name='Spider-Boy' secret_name='Pedro Parqueador' age=16 id=2
 ```
 
 </div>
 
 ## Query the Database for the Same Row
 
-To confirm if it was deleted, now let's query the database again, with the same `"Spider-Youngster"` name:
+To confirm if it was deleted, now let's query the database again, with the same `"Spider-Boy"` name:
 
 ```Python hl_lines="15-17"
 # Code above omitted 👆
@@ -272,10 +272,10 @@ $ python app.py
 INFO Engine BEGIN (implicit)
 
 // SQL to search for the hero
-INFO Engine SELECT hero.id, hero.name, hero.secret_name, hero.age 
-FROM hero 
+INFO Engine SELECT hero.id, hero.name, hero.secret_name, hero.age
+FROM hero
 WHERE hero.name = ?
-INFO Engine [no key 0.00013s] ('Spider-Youngster',)
+INFO Engine [no key 0.00013s] ('Spider-Boy',)
 ```
 
 </div>
@@ -315,7 +315,7 @@ $ python app.py
 // Previous output omitted 🙈
 
 // Indeed, the hero was deleted 🔥
-There's no hero named Spider-Youngster
+There's no hero named Spider-Boy
 
 // Cleanup after the with block
 INFO Engine ROLLBACK
@@ -334,7 +334,7 @@ Now let's review all that code:
 {!./docs_src/tutorial/delete/annotations/en/tutorial002.md!}
 
 !!! tip
-    Check out the number bubbles to see what is done by each line of code.
+Check out the number bubbles to see what is done by each line of code.
 
 ## Recap
 
